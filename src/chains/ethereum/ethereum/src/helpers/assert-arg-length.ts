@@ -1,7 +1,6 @@
 type UnknownFn = (this: unknown, ...args: any[]) => unknown;
-type FunctionPropertyDescriptor<T extends UnknownFn> = TypedPropertyDescriptor<
-  T
->;
+type FunctionPropertyDescriptor<T extends UnknownFn> =
+  TypedPropertyDescriptor<T>;
 export function assertArgLength(min: number, max: number = min) {
   return function <O extends Object, T extends UnknownFn>(
     target: O,

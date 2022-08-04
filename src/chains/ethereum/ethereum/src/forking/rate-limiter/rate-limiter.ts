@@ -4,9 +4,7 @@ import { AbortSignal } from "abort-controller";
 import Semaphore from "semaphore";
 import { LimitCounter } from "./limit-counter";
 
-type PromiseFn<T> = (
-  ...args: unknown[]
-) => Promise<{
+type PromiseFn<T> = (...args: unknown[]) => Promise<{
   response: { result: any } | { error: { message: string; code: number } };
   raw: T;
 }>;

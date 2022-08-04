@@ -123,5 +123,5 @@ export function decode<T>(input: Buffer | Buffer[]): T;
 export function decode<T = Buffer | Buffer[]>(
   input: Buffer | Buffer[]
 ): T | T[] {
-  return (_decode(input) as unknown) as T;
+  return _decode(input) as unknown as T;
 }

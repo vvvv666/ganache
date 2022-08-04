@@ -36,9 +36,10 @@ export type EthereumRawBlock = [
 type Head<T extends any[]> = T extends [...infer Head, any] ? Head : any[];
 
 export type GanacheRawBlock = [...EthereumRawBlock, ...GanacheRawBlockExtras];
-export function serialize(
-  raw: Head<GanacheRawBlock>
-): { serialized: Buffer; size: number } {
+export function serialize(raw: Head<GanacheRawBlock>): {
+  serialized: Buffer;
+  size: number;
+} {
   const serializedStart = encodeRange(raw, 0, 3);
   const serializedLength = serializedStart.length;
   const ethereumRawBlockSize = encodeLength(serializedLength, 192).length;
